@@ -138,3 +138,11 @@ city = "xxx"
 state = "Tamil Nadu"
 pincode = "xxxxxx"
 payment_method = "UPI"
+
+✅ Function Example (to show usage)
+python
+# Function Example
+def greet_user(name):
+    return "Welcome, " + name + "! Your registration is successful."
+
+print(greet_user("YYY"))
