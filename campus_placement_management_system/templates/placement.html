@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placement Details</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        input { padding: 8px; width: 150px; }
+        button { padding: 10px 20px; background: green; color: white; border: none; cursor: pointer; }
+        a { display: inline-block; margin-top: 10px; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+
+    <h2>Placement Details</h2>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <p><b>Register Number :</b> {{ regno }}</p>
+    <p><b>Student Name :</b> {{ name }}</p>
+    <p><b>Department :</b> {{ department }}</p>
+    <p><b>CGPA :</b> {{ cgpa }}</p>
+
+    <p><b>Eligible Company :</b> {{ company }}</p>
+    <p><b>Package :</b> {{ package }} LPA</p>
+
+    <form action="/apply" method="POST">
+
+        <input type="hidden" name="regno" value="{{ regno }}">
+        <input type="hidden" name="name" value="{{ name }}">
+        <input type="hidden" name="department" value="{{ department }}">
+        <input type="hidden" name="cgpa" value="{{ cgpa }}">
+        <input type="hidden" name="company" value="{{ company }}">
+        <input type="hidden" name="package" value="{{ package }}">
+
+        <button type="submit">Apply for Placement</button>
+
+    </form>
+
+    <a href="/">Back to Search</a>
+
+</body>
+</html>
